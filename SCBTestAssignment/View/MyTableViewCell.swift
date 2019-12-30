@@ -9,7 +9,6 @@
 import UIKit
 class MyTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var mobiePhonImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
