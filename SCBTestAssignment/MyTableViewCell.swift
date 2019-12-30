@@ -15,6 +15,7 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var starSelected: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -20,9 +20,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jlA-ci-eOg">
-                                <rect key="frame" x="0.0" y="61" width="414" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jlA-ci-eOg">
+                                <rect key="frame" x="0.0" y="61" width="414" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -30,9 +29,15 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jlA-ci-eOg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="73t-qK-zYN"/>
+                            <constraint firstItem="jlA-ci-eOg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="MbW-sA-OpU"/>
+                            <constraint firstItem="jlA-ci-eOg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zK8-24-b3p"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="segmentControl" destination="jlA-ci-eOg" id="HGH-y3-88E"/>
                         <outlet property="tableView" destination="eAR-sq-TYc" id="lqv-3N-dAA"/>
                     </connections>
                 </viewController>
