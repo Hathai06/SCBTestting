@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,7 +66,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="TLy-Y1-tak" firstAttribute="leading" secondItem="QAk-p6-4VN" secondAttribute="trailing" constant="9" id="5Qj-ZU-XMO"/>
-                    <constraint firstAttribute="bottom" secondItem="Vg4-J3-Xv5" secondAttribute="bottom" constant="10" id="8nn-yo-GxB"/>
+                    <constraint firstAttribute="bottom" secondItem="Vg4-J3-Xv5" secondAttribute="bottom" constant="9" id="8nn-yo-GxB"/>
                     <constraint firstItem="Vg4-J3-Xv5" firstAttribute="leading" secondItem="TLy-Y1-tak" secondAttribute="trailing" constant="20" id="BiJ-l3-xWS"/>
                     <constraint firstAttribute="trailing" secondItem="IU3-jh-XHp" secondAttribute="trailing" constant="27" id="CIj-5L-Km1"/>
                     <constraint firstAttribute="trailing" secondItem="Vg4-J3-Xv5" secondAttribute="trailing" constant="20" id="Fta-HQ-lSg"/>
@@ -74,7 +74,7 @@
                     <constraint firstItem="IU3-jh-XHp" firstAttribute="leading" secondItem="QAk-p6-4VN" secondAttribute="trailing" constant="9" id="Lx8-gW-dnc"/>
                     <constraint firstItem="QAk-p6-4VN" firstAttribute="top" secondItem="BTq-9e-qzo" secondAttribute="top" constant="16" id="LxH-yd-SNl"/>
                     <constraint firstItem="RWh-do-U6D" firstAttribute="leading" secondItem="QAk-p6-4VN" secondAttribute="trailing" constant="9" id="M4e-eO-GCh"/>
-                    <constraint firstAttribute="bottom" secondItem="TLy-Y1-tak" secondAttribute="bottom" constant="10" id="Son-hz-tf0"/>
+                    <constraint firstAttribute="bottom" secondItem="TLy-Y1-tak" secondAttribute="bottom" constant="9" id="Son-hz-tf0"/>
                     <constraint firstItem="gyh-fI-029" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RWh-do-U6D" secondAttribute="trailing" constant="10" id="UBS-HL-WNU"/>
                     <constraint firstItem="TLy-Y1-tak" firstAttribute="top" secondItem="IU3-jh-XHp" secondAttribute="bottom" constant="9" id="Zco-21-sgy"/>
                     <constraint firstAttribute="trailing" secondItem="gyh-fI-029" secondAttribute="trailing" constant="13" id="f7c-JE-jZJ"/>
