@@ -36,15 +36,20 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @objc
     private func requestData() {
         
-       
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyViewCell") as! MyTableViewCell
+        
+        
         return cell
+    }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(HomeDetailPage(), animated: true)
     }
     
     

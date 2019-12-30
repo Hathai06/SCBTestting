@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="383"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKJ-22-MBz">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKJ-22-MBz" customClass="DetailCollectionViewCell" customModule="SCBTestAssignment" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="391" height="383"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IKL-zU-Lku">
@@ -57,6 +57,7 @@
                             <constraint firstItem="KbN-3Q-ueu" firstAttribute="top" secondItem="rx5-oo-zAc" secondAttribute="bottom" constant="174" id="cFh-5A-E0L"/>
                             <constraint firstItem="rx5-oo-zAc" firstAttribute="leading" secondItem="nKJ-22-MBz" secondAttribute="leading" constant="48" id="fQr-Xg-dlj"/>
                             <constraint firstAttribute="trailing" secondItem="MDf-hf-dgm" secondAttribute="trailing" constant="41" id="gLT-6q-Mz1"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="391" id="oLL-LD-3dY"/>
                             <constraint firstItem="KbN-3Q-ueu" firstAttribute="top" secondItem="MDf-hf-dgm" secondAttribute="bottom" constant="174" id="otT-CL-4aK"/>
                             <constraint firstAttribute="trailing" secondItem="IKL-zU-Lku" secondAttribute="trailing" constant="23" id="yo0-s6-IHu"/>
                             <constraint firstItem="MDf-hf-dgm" firstAttribute="top" secondItem="nKJ-22-MBz" secondAttribute="top" constant="33" id="z42-lV-HvK"/>
@@ -77,6 +78,8 @@
                 <outlet property="detailLabel" destination="KbN-3Q-ueu" id="sMw-Js-5P8"/>
                 <outlet property="priceDetailLabel" destination="MDf-hf-dgm" id="f7G-q8-j9K"/>
                 <outlet property="ratingDetailLabel" destination="rx5-oo-zAc" id="xiW-Ou-hj5"/>
+                <outlet property="widthConstraints" destination="oLL-LD-3dY" id="U4w-a8-wjO"/>
+                <outlet property="widthzConstraint" destination="oLL-LD-3dY" id="Xu3-kp-cjj"/>
             </connections>
             <point key="canvasLocation" x="144.20289855072465" y="102.79017857142857"/>
         </collectionViewCell>

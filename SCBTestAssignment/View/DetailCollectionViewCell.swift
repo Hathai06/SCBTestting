@@ -8,16 +8,20 @@
 
 import UIKit
 
-class MyCollectionViewCell: UICollectionViewCell {
+class DetailCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var ratingDetailLabel: UILabel!
     @IBOutlet weak var priceDetailLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     
+    @IBOutlet weak var widthConstraints: NSLayoutConstraint!
     override func awakeFromNib() {
+      
         super.awakeFromNib()
-        // Initialization code
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        let screenWidth = UIScreen.main.bounds.size.width
+        widthConstraints.constant = screenWidth - (2*12)
     }
 
 }
