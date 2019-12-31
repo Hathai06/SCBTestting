@@ -8,20 +8,21 @@
 
 import Foundation
 import UIKit
-class HomeDetailPage: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeDetailPage: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate{
     
- func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return 3
-      }
-      
-      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          let cell = showCollectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionViewCell", for: indexPath)as! DetailCollectionViewCell
-          return cell
-      }
+    @IBOutlet weak var detailCollectionView: UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let mycell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "dataCell", for: indexPath) as! showCollectionViewCell
+        return mycell
+    }
     
     
-    @IBOutlet weak var titleLabel: UINavigationBar!
-    @IBOutlet weak var showCollectionView: UICollectionView!
+   
     
     override func viewDidLoad() {
           super.viewDidLoad()

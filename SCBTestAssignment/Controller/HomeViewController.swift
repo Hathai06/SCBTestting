@@ -49,7 +49,9 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(HomeDetailPage(), animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "homeDetailView") as! HomeDetailPage
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
