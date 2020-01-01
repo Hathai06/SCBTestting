@@ -10,11 +10,10 @@ import Foundation
 struct HomeManager {
     
     var homeUrl = "https://scb-test-mobile.herokuapp.com/api/mobiles/"
-    
-    func performRequest(completion: @escaping (HomeData?, Error?)->()) {
+
+    func performRequest(completion: @escaping ([HomeData]?, Error?)->()) {
            
            if let url = URL(string: homeUrl) {
-               
                let session = URLSession(configuration: .default)
                let task = session.dataTask(with: url) { (data, response, error)
                    in
@@ -32,9 +31,9 @@ struct HomeManager {
            }
        }
     
-     func parseJson(data: Data?,completion: @escaping(HomeData?, Error?)->()) {
+    func parseJson(data: Data?,completion: @escaping([HomeData]?, Error?)->()) {
          
-         var decodeData: HomeData?
+        var decodeData: [HomeData]?
          var error: Error?
          
          guard let homeData = data else {
@@ -42,7 +41,7 @@ struct HomeManager {
          }
          
          do {
-             decodeData = try JSONDecoder().decode(HomeData.self, from: homeData)
+            decodeData = try JSONDecoder().decode(Array<HomeData>.self, from: homeData)
              
          } catch let err {
              error = err
@@ -51,7 +50,5 @@ struct HomeManager {
          
          completion(decodeData, error)
      }
-    
-    
     
 }

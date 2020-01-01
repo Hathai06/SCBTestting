@@ -10,9 +10,9 @@ struct HomeData: Codable {
     let brand : String?
     let name : String?
     let description : String?
-    let price : Int
-    let thumbImageURL : [String]?
-    let rating : Int
+    let price : Float
+    let thumbImageURL : String?
+    let rating : Float
     
     private enum CodingKeys : String, CodingKey {
         case id = "id"

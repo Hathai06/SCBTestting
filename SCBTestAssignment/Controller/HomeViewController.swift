@@ -8,52 +8,66 @@
 
 import UIKit
 
-class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     private var homeManager = HomeManager()
     private var homeData = [HomeData]()
-    private var refreshControl = UIRefreshControl()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
+        requestData()
         tableView.register(UINib(nibName: "MyViewCell", bundle: nil), forCellReuseIdentifier: "MyViewCell")
-        refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
-              tableView.refreshControl = refreshControl
     }
     
-    @objc func reload () {
-        homeData.removeAll()
-        requestData()
-    }
-
     @objc
     private func requestData() {
-        
+        homeManager.performRequest() { [weak self] (data, error) in
+            
+            guard let weakSelf = self else {
+                return
+            }
+            if let data = data {
+                
+                weakSelf.homeData = data
+            
+                DispatchQueue.main.async {
+                    weakSelf.tableView.reloadData()
+                    print(data)
+                }
+                
+            } else {
+                print(error!)
+            }
+        }
     }
+}
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return homeData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyViewCell") as! MyTableViewCell
-        
-        
+        let mobie = homeData[indexPath.row]
+        cell.nameLabel.text = mobie.name
+        cell.descriptionLabel.text = mobie.description
+        cell.mobiePhonImage.performImageRequest(thumbImageURL: mobie.thumbImageURL)
+        cell.priceLabel.text = String(mobie.price)
+        cell.ratingLabel.text = String(mobie.rating)
+
         return cell
     }
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "homeDetailView") as! HomeDetailPage
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
 }
-
