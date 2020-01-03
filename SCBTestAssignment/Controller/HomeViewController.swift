@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
     private var homeManager = HomeManager()
     private var homeData = [HomeData]()
     
+ 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -31,13 +33,13 @@ class HomeViewController: UIViewController {
             guard let weakSelf = self else {
                 return
             }
+            
             if let data = data {
                 
                 weakSelf.homeData = data
             
                 DispatchQueue.main.async {
                     weakSelf.tableView.reloadData()
-                    print(data)
                 }
                 
             } else {
@@ -67,6 +69,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "homeDetailView") as! HomeDetailPage
+        vc.getDataDetail = homeData[indexPath.row]
+    
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -22,6 +22,5 @@ struct HomeData: Codable {
         case price = "price"
         case thumbImageURL = "thumbImageURL"
         case rating = "rating"
-        
-       }
+    }
 }
