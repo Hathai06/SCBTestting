@@ -35,7 +35,7 @@ struct HomeManager {
         guard let images = images else {
             return
         }
-        let urlDetail = homeUrl + "/" + String(images) + "/image"
+        let urlDetail = homeUrl  + String(images) + "/images/"
         if let url = URL(string: (urlDetail)) {
             
             let session = URLSession(configuration: .default)

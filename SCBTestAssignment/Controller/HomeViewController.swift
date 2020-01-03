@@ -12,12 +12,10 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    
+    @IBOutlet weak var sortButtonItem: UIBarButtonItem!
     private var homeManager = HomeManager()
     private var homeData = [HomeData]()
     
- 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -60,8 +58,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = mobie.name
         cell.descriptionLabel.text = mobie.description
         cell.mobiePhonImage.performImageRequest(thumbImageURL: mobie.thumbImageURL)
-        cell.priceLabel.text = String(mobie.price)
-        cell.ratingLabel.text = String(mobie.rating)
+         cell.mobiePhonImage.image = UIImage(named: "star")
+        cell.priceLabel.text = "Price: $" + String(mobie.price)
+        cell.ratingLabel.text = "Rating: " + String(mobie.rating)
 
         return cell
     }

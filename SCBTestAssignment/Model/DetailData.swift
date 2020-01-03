@@ -9,7 +9,7 @@
 struct DetailData: Codable {
     let id: Int
     let url: String?
-    let mobile_id: String?
+    let mobile_id: Int
     
     private enum CodingKeys : String, CodingKey {
            case id = "id"
