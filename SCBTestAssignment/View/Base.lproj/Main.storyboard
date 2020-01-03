@@ -41,11 +41,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="m5n-ht-asl">
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="yDp-Iy-1S3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="yDp-Iy-1S3">
+                            <connections>
+                                <action selector="sortHandle:" destination="BYZ-38-t0r" id="lcJ-eS-xzU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentControl" destination="jlA-ci-eOg" id="HGH-y3-88E"/>
-                        <outlet property="sortButtonItem" destination="yDp-Iy-1S3" id="jxF-xF-A3a"/>
                         <outlet property="tableView" destination="eAR-sq-TYc" id="lqv-3N-dAA"/>
                     </connections>
                 </viewController>

@@ -12,17 +12,48 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var sortButtonItem: UIBarButtonItem!
     private var homeManager = HomeManager()
     private var homeData = [HomeData]()
     
+    
+    @IBAction func sortHandle(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Sort", message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Price low to high", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction!) in
+            self.homeData = self.homeData.sorted() { $0.price < $1.price }
+            self.tableView.reloadData();
+        }))
+        
+        
+        alert.addAction(UIAlertAction(title: "Price high to low", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+            self.homeData = self.homeData.sorted() { $0.price > $1.price }
+            self.tableView.reloadData();
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Rating", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) in
+            self.homeData = self.homeData.sorted(){ $0.rating > $1.rating }
+            self.tableView.reloadData();
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         requestData()
         tableView.register(UINib(nibName: "MyViewCell", bundle: nil), forCellReuseIdentifier: "MyViewCell")
+        
+        setUp ()
     }
+    
+    func setUp () {
+        
+    }
+    
     
     @objc
     private func requestData() {
@@ -35,7 +66,7 @@ class HomeViewController: UIViewController {
             if let data = data {
                 
                 weakSelf.homeData = data
-            
+                
                 DispatchQueue.main.async {
                     weakSelf.tableView.reloadData()
                 }
@@ -58,10 +89,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = mobie.name
         cell.descriptionLabel.text = mobie.description
         cell.mobiePhonImage.performImageRequest(thumbImageURL: mobie.thumbImageURL)
-         cell.mobiePhonImage.image = UIImage(named: "star")
         cell.priceLabel.text = "Price: $" + String(mobie.price)
         cell.ratingLabel.text = "Rating: " + String(mobie.rating)
-
+        
         return cell
     }
     
@@ -69,7 +99,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "homeDetailView") as! HomeDetailPage
         vc.getDataDetail = homeData[indexPath.row]
-    
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
