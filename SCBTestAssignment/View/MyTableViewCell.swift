@@ -30,11 +30,10 @@ class MyTableViewCell: UITableViewCell {
         } else {
             favouriteButton.isSelected = true
         }
-       
+        
         if let indexPathOfCell = indexPathOfCell {
             delegate?.sentDataMobile(indexPathOfCell: indexPathOfCell)
         }
-       
     }
     
     override func awakeFromNib() {

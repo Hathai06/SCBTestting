@@ -12,8 +12,8 @@ struct DetailData: Codable {
     let mobile_id: Int
     
     private enum CodingKeys : String, CodingKey {
-           case id = "id"
-           case url = "url"
-           case mobile_id = "mobile_id"
-       }    
+        case id = "id"
+        case url = "url"
+        case mobile_id = "mobile_id"
+    }
 }

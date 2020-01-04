@@ -58,7 +58,6 @@ class HomeDetailPage: UIViewController {
                 
                 DispatchQueue.main.async {
                     weakSelf.detailCollectionView.reloadData()
-                    print(data)
                 }
                 
             } else {

@@ -20,7 +20,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         requestData()
         setUp ()
-        
     }
     
     func setUp () {
@@ -60,7 +59,7 @@ class HomeViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-        
+    
     @objc
     private func requestData() {
         homeManager.performRequest() { [weak self] (data, error) in
