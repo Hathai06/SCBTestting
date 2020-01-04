@@ -16,6 +16,9 @@ class HomeDetailPage: UIViewController {
     @IBOutlet weak var descriptionDatail: UITextView!
     private var homeManager = HomeManager()
     private var detailData = [DetailData]()
+    
+    
+    
     var getDataDetail: HomeData? {
         didSet {
             guard getDataDetail != nil else {
@@ -29,6 +32,10 @@ class HomeDetailPage: UIViewController {
         super.viewDidLoad()
         detailCollectionView.delegate = self
         detailCollectionView.dataSource = self
+        setUp()
+        
+    }
+    func setUp() {
         
         if let getDataDetail = getDataDetail {
             ratingLabel.text = "Rating: " + String(getDataDetail.rating)
@@ -36,6 +43,7 @@ class HomeDetailPage: UIViewController {
             descriptionDatail.text = getDataDetail.description
             
         }
+        
     }
     @objc
     private func detailRequestData() {
@@ -68,7 +76,7 @@ extension HomeDetailPage: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let mycell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "dataCell", for: indexPath) as! showCollectionViewCell
-                let myMobie = detailData[indexPath.row]
+        let myMobie = detailData[indexPath.row]
         mycell.detailImage.performImageRequest(thumbImageURL: myMobie.url)
         
         return mycell

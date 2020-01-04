@@ -76,5 +76,4 @@ struct HomeManager {
         completion(decodeData, error)
     }
     
-    
 }

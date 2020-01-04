@@ -40,6 +40,10 @@
                             <constraint firstAttribute="width" constant="15" id="Q0O-y6-yIq"/>
                         </constraints>
                         <state key="normal" image="star" catalog="system"/>
+                        <state key="selected" image="star.fill" catalog="system"/>
+                        <connections>
+                            <action selector="starHandle:" destination="xEh-bX-Zvk" eventType="touchUpInside" id="U9i-6M-4u4"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Rating: 5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Vg4-J3-Xv5">
                         <rect key="frame" x="326" y="89" width="73" height="17"/>
@@ -81,7 +85,6 @@
                 <outlet property="nameLabel" destination="RWh-do-U6D" id="Z07-lA-eB4"/>
                 <outlet property="priceLabel" destination="TLy-Y1-tak" id="XBY-wz-8Km"/>
                 <outlet property="ratingLabel" destination="Vg4-J3-Xv5" id="Efk-yH-9XM"/>
-                <outlet property="starSelected" destination="gyh-fI-029" id="wUa-b3-vo8"/>
             </connections>
             <point key="canvasLocation" x="-323.91304347826087" y="-414.50892857142856"/>
         </tableViewCell>
@@ -89,5 +92,6 @@
     <resources>
         <image name="square.and.arrow.down.fill" catalog="system" width="60" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>

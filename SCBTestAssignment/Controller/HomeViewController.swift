@@ -14,9 +14,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     private var homeManager = HomeManager()
     private var homeData = [HomeData]()
-    
+    var favourite = [HomeData]()
     
     @IBAction func sortHandle(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    private func sortAlert() {
         let alert = UIAlertController(title: "Sort", message: "", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Price low to high", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction!) in
@@ -39,6 +43,7 @@ class HomeViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,14 +51,12 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         requestData()
         tableView.register(UINib(nibName: "MyViewCell", bundle: nil), forCellReuseIdentifier: "MyViewCell")
-        
         setUp ()
     }
     
     func setUp () {
         
     }
-    
     
     @objc
     private func requestData() {
@@ -91,6 +94,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.mobiePhoneImage.performImageRequest(thumbImageURL: mobie.thumbImageURL)
         cell.priceLabel.text = "Price: $" + String(mobie.price)
         cell.ratingLabel.text = "Rating: " + String(mobie.rating)
+        cell.indexPathOfCell = indexPath.row
         
         return cell
     }

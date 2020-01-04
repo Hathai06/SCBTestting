@@ -9,14 +9,25 @@
 import UIKit
 class MyTableViewCell: UITableViewCell {
     
+    var indexPathOfCell: Int?
+    
     @IBOutlet weak var mobiePhoneImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var starSelected: UIButton!
+    
+    @IBAction func starHandle(_ sender: Any) {
+        
+        if let indexPathOfCell = indexPathOfCell {
+           
+        }
+        
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 }
