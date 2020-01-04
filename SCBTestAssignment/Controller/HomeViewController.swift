@@ -88,7 +88,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let mobie = homeData[indexPath.row]
         cell.nameLabel.text = mobie.name
         cell.descriptionLabel.text = mobie.description
-        cell.mobiePhonImage.performImageRequest(thumbImageURL: mobie.thumbImageURL)
+        cell.mobiePhoneImage.performImageRequest(thumbImageURL: mobie.thumbImageURL)
         cell.priceLabel.text = "Price: $" + String(mobie.price)
         cell.ratingLabel.text = "Rating: " + String(mobie.rating)
         

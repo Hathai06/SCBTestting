@@ -65,8 +65,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xeI-kW-hAP">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="10" width="414" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="0.51912992294520544" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Fs2-aM-UiI"/>
                                 </constraints>
@@ -79,23 +79,24 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dataCell" id="xes-jq-J6d" customClass="showCollectionViewCell" customModule="SCBTestAssignment" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="48" width="193" height="204"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OAI-Ea-e68">
                                             <rect key="frame" x="0.0" y="0.0" width="193" height="204"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MNR-X1-uCo">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MNR-X1-uCo">
                                                     <rect key="frame" x="0.0" y="-1" width="193" height="205"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="J1y-Ws-A53"/>
-                                                        <constraint firstAttribute="height" constant="200" id="q88-AZ-bX0"/>
+                                                        <constraint firstAttribute="width" constant="250" id="J1y-Ws-A53"/>
+                                                        <constraint firstAttribute="height" constant="250" id="q88-AZ-bX0"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="MNR-X1-uCo" secondAttribute="bottom" id="80U-2S-dnQ"/>
+                                                <constraint firstItem="MNR-X1-uCo" firstAttribute="centerX" secondItem="OAI-Ea-e68" secondAttribute="centerX" id="CxH-YH-3aI"/>
+                                                <constraint firstItem="MNR-X1-uCo" firstAttribute="centerY" secondItem="OAI-Ea-e68" secondAttribute="centerY" id="O65-iX-9Ek"/>
                                                 <constraint firstItem="MNR-X1-uCo" firstAttribute="top" secondItem="OAI-Ea-e68" secondAttribute="top" id="XzF-Wh-C2b"/>
-                                                <constraint firstItem="MNR-X1-uCo" firstAttribute="centerY" secondItem="OAI-Ea-e68" secondAttribute="centerY" id="byl-Rk-iEf"/>
                                                 <constraint firstAttribute="trailing" secondItem="MNR-X1-uCo" secondAttribute="trailing" id="cSU-1X-8j8"/>
                                                 <constraint firstItem="MNR-X1-uCo" firstAttribute="leading" secondItem="OAI-Ea-e68" secondAttribute="leading" id="x08-8a-iaA"/>
                                             </constraints>
@@ -113,18 +114,20 @@
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Rating: 4.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlV-hW-dmX">
                                 <rect key="frame" x="10" y="54" width="82.5" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.99148990971845119" blue="0.99134361996559739" alpha="0.5177921660958904" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Price: 179.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTW-Wo-4xx">
                                 <rect key="frame" x="304.5" y="54" width="99.5" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="0.52437392979452058" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QmK-9A-NU9">
-                                <rect key="frame" x="0.0" y="308" width="414" height="554"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="QmK-9A-NU9">
+                                <rect key="frame" x="0.0" y="318" width="414" height="544"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -137,7 +140,7 @@
                             <constraint firstItem="xeI-kW-hAP" firstAttribute="leading" secondItem="CoD-wS-kDZ" secondAttribute="leading" id="0tb-fO-Rck"/>
                             <constraint firstItem="xeI-kW-hAP" firstAttribute="trailing" secondItem="CoD-wS-kDZ" secondAttribute="trailing" id="45p-7b-3T9"/>
                             <constraint firstAttribute="bottomMargin" secondItem="QmK-9A-NU9" secondAttribute="bottom" id="EI8-ME-7aU"/>
-                            <constraint firstItem="xeI-kW-hAP" firstAttribute="top" secondItem="Ju3-Ls-FIk" secondAttribute="top" id="Fp0-rz-JTo"/>
+                            <constraint firstItem="xeI-kW-hAP" firstAttribute="top" secondItem="Ju3-Ls-FIk" secondAttribute="top" constant="10" id="Fp0-rz-JTo"/>
                             <constraint firstItem="TTW-Wo-4xx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MlV-hW-dmX" secondAttribute="trailing" constant="8" symbolic="YES" id="MLS-B3-bNr"/>
                             <constraint firstItem="MlV-hW-dmX" firstAttribute="top" secondItem="CoD-wS-kDZ" secondAttribute="top" constant="10" id="T5y-0d-UYT"/>
                             <constraint firstItem="QmK-9A-NU9" firstAttribute="top" secondItem="xeI-kW-hAP" secondAttribute="bottom" constant="8" symbolic="YES" id="TDP-Ad-zGF"/>

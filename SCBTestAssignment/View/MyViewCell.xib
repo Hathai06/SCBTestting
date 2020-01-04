@@ -77,7 +77,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="IU3-jh-XHp" id="vpd-6i-GcO"/>
-                <outlet property="mobiePhonImage" destination="QAk-p6-4VN" id="4f4-yb-wF2"/>
+                <outlet property="mobiePhoneImage" destination="QAk-p6-4VN" id="4f4-yb-wF2"/>
                 <outlet property="nameLabel" destination="RWh-do-U6D" id="Z07-lA-eB4"/>
                 <outlet property="priceLabel" destination="TLy-Y1-tak" id="XBY-wz-8Km"/>
                 <outlet property="ratingLabel" destination="Vg4-J3-Xv5" id="Efk-yH-9XM"/>
