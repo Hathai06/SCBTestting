@@ -34,10 +34,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-fI-029">
-                        <rect key="frame" x="391" y="13" width="15" height="15"/>
+                        <rect key="frame" x="386" y="13" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="Dwt-6m-D8q"/>
-                            <constraint firstAttribute="width" constant="15" id="Q0O-y6-yIq"/>
+                            <constraint firstAttribute="height" constant="20" id="Dwt-6m-D8q"/>
+                            <constraint firstAttribute="width" constant="20" id="Q0O-y6-yIq"/>
                         </constraints>
                         <state key="normal" image="star" catalog="system"/>
                         <state key="selected" image="star.fill" catalog="system"/>
@@ -51,8 +51,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="square.and.arrow.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QAk-p6-4VN">
-                        <rect key="frame" x="9" y="13.999999999999993" width="90" height="89.666666666666657"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAk-p6-4VN">
+                        <rect key="frame" x="9" y="14" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="FMl-MQ-p5b"/>
                             <constraint firstAttribute="width" constant="90" id="Yeq-mB-rew"/>
@@ -91,7 +91,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="square.and.arrow.down.fill" catalog="system" width="60" height="64"/>
         <image name="star" catalog="system" width="64" height="58"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>

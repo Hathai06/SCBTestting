@@ -40,6 +40,7 @@ class HomeDetailPage: UIViewController {
             ratingLabel.text = "Rating: " + String(getDataDetail.rating)
             priceLabel.text = "Price: $" + String(getDataDetail.price)
             descriptionDatail.text = getDataDetail.description
+            self.title = getDataDetail.name
         }
     }
     
@@ -76,7 +77,6 @@ extension HomeDetailPage: UICollectionViewDelegate, UICollectionViewDataSource {
         let mycell = detailCollectionView.dequeueReusableCell(withReuseIdentifier: "dataCell", for: indexPath) as! showCollectionViewCell
         let myMobie = detailData[indexPath.row]
         mycell.detailImage.performImageRequest(thumbImageURL: myMobie.url)
-        
         return mycell
     }
     

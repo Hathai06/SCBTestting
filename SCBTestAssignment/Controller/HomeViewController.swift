@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         requestData()
         setUp ()
+        
     }
     
     func setUp () {
@@ -139,7 +140,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "homeDetailView") as! HomeDetailPage
         vc.getDataDetail = homeData[indexPath.row]
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
