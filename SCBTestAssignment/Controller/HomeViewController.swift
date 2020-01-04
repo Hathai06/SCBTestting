@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         requestData()
         setUp ()
     }
@@ -28,16 +27,12 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "MyViewCell", bundle: nil), forCellReuseIdentifier: "MyViewCell")
     }
+    
     @IBAction func segmentSelected(_ sender: UISegmentedControl) {
         tableView.reloadData()
-        
     }
     
     @IBAction func sortHandle(_ sender: UIBarButtonItem) {
-        sortAlert()
-    }
-    
-    private func sortAlert() {
         let alert = UIAlertController(title: "Sort", message: "", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Price low to high", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction!) in
@@ -63,9 +58,8 @@ class HomeViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
-        
     }
-    
+        
     @objc
     private func requestData() {
         homeManager.performRequest() { [weak self] (data, error) in
@@ -88,6 +82,7 @@ class HomeViewController: UIViewController {
         }
     }
 }
+
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,7 +135,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "homeDetailView") as! HomeDetailPage
@@ -149,7 +143,25 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        if segmentControl.selectedSegmentIndex == 0 {
+            return false
+        } else if  segmentControl.selectedSegmentIndex == 1 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            favourite.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 }
+
 extension HomeViewController : SentDataMobileDelagate {
     func sentDataMobile(indexPathOfCell: Int) {
         if let index = favourite.firstIndex(where: {$0.id == homeData[indexPathOfCell].id}){

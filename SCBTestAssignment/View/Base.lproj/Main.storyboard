@@ -23,8 +23,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jlA-ci-eOg">
                                 <rect key="frame" x="0.0" y="105" width="414" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="All"/>
+                                    <segment title="Favourite"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="W8n-sl-1aO"/>

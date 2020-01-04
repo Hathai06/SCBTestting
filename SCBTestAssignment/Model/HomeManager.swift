@@ -67,7 +67,6 @@ struct HomeManager {
         do {
             decodeData = try JSONDecoder().decode(Array<T>.self, from: mobileData)
             
-            
         } catch let err {
             error = err
             debugPrint(err)

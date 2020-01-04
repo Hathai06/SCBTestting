@@ -17,8 +17,6 @@ class HomeDetailPage: UIViewController {
     private var homeManager = HomeManager()
     private var detailData = [DetailData]()
     
-    
-    
     var getDataDetail: HomeData? {
         didSet {
             guard getDataDetail != nil else {
@@ -35,16 +33,16 @@ class HomeDetailPage: UIViewController {
         setUp()
         
     }
+    
     func setUp() {
         
         if let getDataDetail = getDataDetail {
             ratingLabel.text = "Rating: " + String(getDataDetail.rating)
             priceLabel.text = "Price: $" + String(getDataDetail.price)
             descriptionDatail.text = getDataDetail.description
-            
         }
-        
     }
+    
     @objc
     private func detailRequestData() {
         homeManager.detailPerformRequest(images: getDataDetail?.id) { [weak self] (data, error) in
