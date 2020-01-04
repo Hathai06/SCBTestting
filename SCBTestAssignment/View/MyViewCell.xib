@@ -81,6 +81,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="IU3-jh-XHp" id="vpd-6i-GcO"/>
+                <outlet property="favouriteButton" destination="gyh-fI-029" id="Onz-sd-XFo"/>
                 <outlet property="mobiePhoneImage" destination="QAk-p6-4VN" id="4f4-yb-wF2"/>
                 <outlet property="nameLabel" destination="RWh-do-U6D" id="Z07-lA-eB4"/>
                 <outlet property="priceLabel" destination="TLy-Y1-tak" id="XBY-wz-8Km"/>
