@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09021B4923B9C9B400CBB3F5 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09021B4823B9C9B400CBB3F5 /* HomeManager.swift */; };
+		09021B4B23B9CB1B00CBB3F5 /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09021B4A23B9CB1B00CBB3F5 /* HomeData.swift */; };
+		09021B5123B9DC8500CBB3F5 /* imageExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09021B5023B9DC8500CBB3F5 /* imageExtention.swift */; };
+		09021B5323BA178B00CBB3F5 /* HomeDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09021B5223BA178B00CBB3F5 /* HomeDetailPage.swift */; };
+		09622F6A23BB048000FA92CE /* showCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09622F6923BB048000FA92CE /* showCollectionViewCell.swift */; };
+		096D67EC23BE474D000962AC /* DetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096D67EB23BE474D000962AC /* DetailData.swift */; };
 		09E647B623B87E570008DC69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E647B523B87E570008DC69 /* AppDelegate.swift */; };
 		09E647B823B87E570008DC69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E647B723B87E570008DC69 /* SceneDelegate.swift */; };
 		09E647BA23B87E570008DC69 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E647B923B87E570008DC69 /* HomeViewController.swift */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09021B4823B9C9B400CBB3F5 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		09021B4A23B9CB1B00CBB3F5 /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
+		09021B5023B9DC8500CBB3F5 /* imageExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageExtention.swift; sourceTree = "<group>"; };
+		09021B5223BA178B00CBB3F5 /* HomeDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailPage.swift; sourceTree = "<group>"; };
+		09622F6923BB048000FA92CE /* showCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showCollectionViewCell.swift; sourceTree = "<group>"; };
+		096D67EB23BE474D000962AC /* DetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailData.swift; sourceTree = "<group>"; };
 		09E647B223B87E570008DC69 /* SCBTestAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBTestAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E647B523B87E570008DC69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E647B723B87E570008DC69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +53,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09021B4C23B9DB1C00CBB3F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				09021B4823B9C9B400CBB3F5 /* HomeManager.swift */,
+				09021B4A23B9CB1B00CBB3F5 /* HomeData.swift */,
+				096D67EB23BE474D000962AC /* DetailData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09021B4D23B9DB4100CBB3F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09E647CB23B894BD0008DC69 /* MyTableViewCell.swift */,
+				09E647CD23B8962F0008DC69 /* MyViewCell.xib */,
+				09E647BB23B87E570008DC69 /* Main.storyboard */,
+				09622F6923BB048000FA92CE /* showCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09021B4E23B9DB5500CBB3F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09E647B923B87E570008DC69 /* HomeViewController.swift */,
+				09021B5223BA178B00CBB3F5 /* HomeDetailPage.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		09021B4F23B9DC0400CBB3F5 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				09021B5023B9DC8500CBB3F5 /* imageExtention.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
 		09E647A923B87E570008DC69 = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +112,13 @@
 			children = (
 				09E647B523B87E570008DC69 /* AppDelegate.swift */,
 				09E647B723B87E570008DC69 /* SceneDelegate.swift */,
-				09E647B923B87E570008DC69 /* HomeViewController.swift */,
-				09E647BB23B87E570008DC69 /* Main.storyboard */,
+				09021B4C23B9DB1C00CBB3F5 /* Model */,
+				09021B4E23B9DB5500CBB3F5 /* Controller */,
+				09021B4D23B9DB4100CBB3F5 /* View */,
 				09E647BE23B87E590008DC69 /* Assets.xcassets */,
 				09E647C023B87E590008DC69 /* LaunchScreen.storyboard */,
 				09E647C323B87E590008DC69 /* Info.plist */,
-				09E647CB23B894BD0008DC69 /* MyTableViewCell.swift */,
-				09E647CD23B8962F0008DC69 /* MyViewCell.xib */,
+				09021B4F23B9DC0400CBB3F5 /* Extention */,
 			);
 			path = SCBTestAssignment;
 			sourceTree = "<group>";
@@ -145,9 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09021B5323BA178B00CBB3F5 /* HomeDetailPage.swift in Sources */,
 				09E647BA23B87E570008DC69 /* HomeViewController.swift in Sources */,
+				096D67EC23BE474D000962AC /* DetailData.swift in Sources */,
+				09622F6A23BB048000FA92CE /* showCollectionViewCell.swift in Sources */,
+				09021B4923B9C9B400CBB3F5 /* HomeManager.swift in Sources */,
+				09021B4B23B9CB1B00CBB3F5 /* HomeData.swift in Sources */,
 				09E647CC23B894BD0008DC69 /* MyTableViewCell.swift in Sources */,
 				09E647B623B87E570008DC69 /* AppDelegate.swift in Sources */,
+				09021B5123B9DC8500CBB3F5 /* imageExtention.swift in Sources */,
 				09E647B823B87E570008DC69 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCBTestAssignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SCBTestAssignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
